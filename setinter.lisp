@@ -1,0 +1,10 @@
+(DEFUN SETINTER (set1 set2)
+    (cond ( (NULL set1) NIL)
+          ( (MEMBER (CAR set1) set2)
+            (CONS (CAR set1) (SETINTER (CDR set1) set2)) 
+          )
+          ( T (SETINTER (CDR set1) set2))
+    )
+)
+
+(setinter `(x y z) `(v w x z))

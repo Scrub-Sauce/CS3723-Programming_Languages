@@ -1,0 +1,13 @@
+(defun SETUNION(set1 set2)
+    (cond ( (NULL set1) set2)
+          ( (MEMBER (CAR set1) set2)
+              (SETUNION (CDR set1) set2)
+          )
+          ( T (CONS (CAR set1)
+                    (SETUNION (CDR set1) set2)
+              )
+          )
+    )
+)
+
+(SETUNION '(X Y Z) '(V W X Z))

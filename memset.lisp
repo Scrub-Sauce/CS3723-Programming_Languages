@@ -1,0 +1,6 @@
+(DEFUN MEMSET (atm L)
+    (COND  ((NULL L) NIL)
+           ((EQL atm (CAR L)) T)
+           (T (MEMSET atm (CAR L)))
+    )
+)

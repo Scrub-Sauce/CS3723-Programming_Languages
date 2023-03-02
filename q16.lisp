@@ -1,0 +1,11 @@
+(DEFUN HideNumbers (L Code)
+    (COND ((NULL L) NIL)
+          ((NUMBERP L) Code)
+          ((ATOM L) L)
+          ((LISTP (CAR L)) (CONS (HideNumbers (CAR L) code) (HideNumbers(CDR L) code)))
+          (T (CONS(HideNumbers (CAR L) code) (HideNumbers (CDR L) code)))
+    )
+)
+
+(PRINT (HideNumbers '(1 2 SHOE (3 4 DOOR)) 'X))
+(PRINT (HideNumbers '(((3)) (((ABC 5 6)))) 'X))

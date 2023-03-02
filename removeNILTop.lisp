@@ -1,0 +1,10 @@
+(DEFUN removeNILTop (L)
+    (COND ((NULL L) NIL)
+          ((NULL (CAR L)) (removeNILTop (CDR L)))
+          (T (CONS (CAR L) (removeNILTop (CDR L))))
+    )
+)
+
+(removeNILTop '(NIL X NIL NIL Y  NIL Z))
+(removeNILTop '(X NIL Y NIL Z NIL))
+(removeNILTop '(NIL (X NIL Y) (NIL NIL)))
